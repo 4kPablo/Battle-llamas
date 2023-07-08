@@ -1,40 +1,49 @@
-import backgroundHero from '../assets/llamas with machine guns in warzone FADING.png'
+import HeroBackground from './HeroBackground'
 import HeroCard from './HeroCard'
 import HeroStats from './HeroStats'
-import versatilidad from '../assets/versatilidad.jpg'
-import noagresivas from '../assets/noagresivas.jpg'
-import bajocosto from '../assets/bajocosto.jpg'
-import proteccion from '../assets/proteccion.jpg'
-import conservacion from '../assets/conservacion.jpg'
+import versatilidad from '../assets/landing/versatilidad.jpg'
+import noagresivas from '../assets/landing/noagresivas.jpg'
+import bajocosto from '../assets/landing/bajocosto.jpg'
+import proteccion from '../assets/landing/proteccion.jpg'
+import conservacion from '../assets/landing/conservacion.jpg'
 import LandingHorizontalCard from './LandingHorizontalCard'
 import LandingVerticalCard from './LandingVerticalCard'
 import useWindowDimensions from '../windowDimensions'
-import { MdDoubleArrow } from 'react-icons/md';
-import { IconContext } from 'react-icons';
+import { MdDoubleArrow } from 'react-icons/md'
+import { IconContext } from 'react-icons'
 
 function App() {
 
   const { height, width } = useWindowDimensions();
   let landingTitle = '';
+  let backgroundHero = '';
 
-  if (width > 650) {
+  if (width > 685) {
     landingTitle = '- BATTLE LLAMAS -'
   } else {
     landingTitle = 'BATTLE LLAMAS'
   }
 
+  const classNames = [];
+
+  if (width > 640) {
+    classNames.push("flex-row")
+  } else {
+    classNames.push("flex-col")
+  }
+
   return (
     <div className='flex flex-col items-center justify-center'>
-      <h1 className='text-7xl min-[880px]:text-8xl flex text-black bg-black font-space-grotesk justify-center text-center outlined-text w-full py-5'>
+      <h1 className='text-7xl min-[901px]:text-8xl flex text-black bg-black font-space-grotesk justify-center text-center outlined-text w-full p-5'>
         {landingTitle}
       </h1>
-      <img className='backgroundHero' src={backgroundHero} />
+      <HeroBackground />
       <HeroCard />
 
       <div className='w-full bg-[#0d0d0d] px-5 2xl:px-0'>
         <div className='max-w-7xl my-0 mx-auto'>
           <HeroStats />
-          <div className='flex flex-col justify-center items-center gap-20 my-20'>
+          <div className='flex flex-col justify-center items-center gap-20 mb-20'>
             <LandingHorizontalCard
               img={versatilidad}
               imgPosition='left'
@@ -48,7 +57,7 @@ function App() {
               description='A diferencia de otros animales de carga o transporte en el campo de batalla, las alpacas de guerra no son naturalmente agresivas, lo que las hace fiables y seguras en entornos sensibles. También son capaces de distinguir entre amigos y enemigos, brindando seguridad en el combate.'
             />
           </div>
-          <div className='flex justify-between w-full gap-5 my-20'>
+          <div className={'flex justify-between gap-20 gap-x-5 w-full mb-20 sm:my-20 ' + classNames.join(" ")}>
             <LandingVerticalCard
               img={bajocosto}
               title='Bajo costo de mantenimiento'
@@ -69,7 +78,7 @@ function App() {
       </div >
 
       <div className='bg-black flex flex-col justify-center items-center pt-20 gap-20'>
-        <h1 className='font-space-grotesk w-full px-5 outlined-text text-7xl min-[865px]:text-8xl text-center'>
+        <h1 className='font-space-grotesk w-full px-5 outlined-text text-6xl sm:text-7xl min-[865px]:text-8xl text-center'>
           HAZ QUE TU ENEMIGO TIEMBLE
         </h1>
 
@@ -84,11 +93,10 @@ function App() {
         </div>
 
         <div className='flex w-full mb-1'>
-          <a className='flex flex-1 text-gray-500 justify-center font-roboto' href="#">Nosotros</a>
-          <a className='flex flex-1 text-gray-500 justify-center font-roboto' href="#">Contacto</a>
-          <a className='flex flex-1 text-gray-500 justify-center font-roboto' href="#">Privacidad</a>
-          <a className='flex flex-1 text-gray-500 justify-center font-roboto' href="#">Legales</a>
-          <a className='flex flex-1 text-gray-500 justify-center font-roboto' href="#">Bienestar animal</a>
+          <a className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center font-roboto' href="#">Nosotros</a>
+          <a className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center font-roboto' href="#">Contacto</a>
+          <a className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center font-roboto' href="#">Privacidad</a>
+          <a className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center font-roboto' href="#">Bienestar animal</a>
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 function HeroStats() {
   return (
-    <div className='flex text-center w-full font-roboto mt-20'>
+    <div className='flex text-center w-full font-roboto my-10 lg:mt-20'>
       <div className="flex-1">
         <p className='text-white text-xl min-[400px]:text-2xl md:text-3xl px-1'>40 Km</p>
         <p className='text-gray-500 text-sm min-[400px]:text-base md:text-xl px-1'>Sin descanso</p>
