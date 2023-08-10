@@ -9,3 +9,5 @@
 .IconContext:nth-child(3) {
   rotate: 180deg;
 }
+
+/*  Recordar que body está estilado directamente desde index.html  */
