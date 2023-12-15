@@ -8,12 +8,13 @@ import proteccion from './assets/proteccion.jpg'
 import conservacion from './assets/conservacion.jpg'
 import LandingHorizontalCard from './LandingHorizontalCard'
 import LandingVerticalCard from './LandingVerticalCard'
+import Footer from '../Footer'
 import useWindowDimensions from '../../windowDimensions'
-import Footer from '../Footer.jsx'
 import { MdDoubleArrow } from 'react-icons/md'
 import { IconContext } from 'react-icons'
+import { Link, useMatch, useResolvedPath } from "react-router-dom"
 
-function App() {
+function Landing() {
 
   const { height, width } = useWindowDimensions();
   const backgroundHero = '';
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <h1 className='text-7xl min-[901px]:text-8xl flex text-black bg-black font-space-grotesk justify-center text-center outlined-text w-full p-5'>
+      <h1 className='text-7xl min-[901px]:text-8xl flex text-black bg-black font-space-grotesk justify-center text-center outlined-text w-full z-40 p-5'>
         {landingTitle}
       </h1>
       <HeroBackground />
@@ -77,7 +78,7 @@ function App() {
         </div>
       </div >
 
-      <div className='bg-black flex flex-col justify-center items-center pt-20 gap-20'>
+      <div className='bg-black flex flex-col justify-center items-center py-20 gap-20'>
         <h1 className='font-space-grotesk w-full px-5 outlined-text text-6xl sm:text-7xl min-[865px]:text-8xl text-center'>
           HAZ QUE TU ENEMIGO TIEMBLE
         </h1>
@@ -85,17 +86,34 @@ function App() {
         <div className='flex items-center justify-center gap-5'>
           <IconContext.Provider value={{ color: "#D9BD8B", size: "76px", className: "IconContext" }}>
             <MdDoubleArrow />
-            <a href="#" className='bg-[#a6121f] border-[#a6121f] font-roboto border-2 text-center py-2 px-3 rounded-xl text-white'>
-              <p className='text-xl font-roboto'>CATÁLOGO DE LLAMAS</p>
-            </a>
+            <CustomLink onClick={scrollToTop} to="/store" className='flex bg-[#a6121f] border-[#a6121f]  border-2 text-center py-2 px-7 rounded-xl text-white'>
+              <p className="text-2xl ">TIENDA</p>
+            </CustomLink>
             <MdDoubleArrow />
           </IconContext.Provider>
         </div>
-
-        <Footer />
       </div>
+
+      <Footer/>
     </div >
   )
 }
 
-export default App
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+};
+
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to)
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+
+  return (
+    <div className={isActive ? "text-slate-500" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </div>
+  )
+}
+
+export default Landing
