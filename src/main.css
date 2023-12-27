@@ -7,11 +7,19 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Kanit', sans-serif;
-  transition: all 150ms ease-out
+  transition: all 150ms ease-out;
 }
 
 .outlined-text {
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; 
+  text-shadow:
+    2px 0 #fff,
+    -2px 0 #fff,
+    0 2px #fff,
+    0 -2px #fff,
+    1px 1px #fff,
+    -1px -1px #fff,
+    1px -1px #fff,
+    -1px 1px #fff;
 }
 
 .IconContext:nth-child(3) {

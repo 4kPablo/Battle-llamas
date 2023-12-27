@@ -1,12 +1,12 @@
-import { React, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landing from "./components/landing/Landing.jsx";
-import Store from "./components/store/Store.jsx";
-import Login from "./components/login/Login.jsx";
-import Register from "./components/login/Register.jsx";
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
-import { About } from "./components/about/About.jsx";
+import { React, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Landing from './components/landing/Landing.jsx';
+import Store from './components/store/Store.jsx';
+import Login from './components/login/Login.jsx';
+import Register from './components/login/Register.jsx';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import { About } from './components/about/About.jsx';
 
 function App() {
   const [allLlamas, setAllLlamas] = useState([]); // Almacena la lista de llamas en el carrito
@@ -15,10 +15,11 @@ function App() {
 
   // Función para agregar una llama al carrito
   const onAddLlama = (llama) => {
+    console.table(llama);
     if (allLlamas.find((item) => item.id === llama.id)) {
       // Si la llama ya está en el carrito, incrementa la cantidad
       const llamas = allLlamas.map((item) =>
-        item.id === llama.id ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === llama.id ? { ...item, quantity: item.quantity + 1 } : item,
       );
       setTotal(total + llama.price); // Suma el precio de una llama al total
       setLlamaCount(llamaCount + 1); // Incrementa en 1 la cantidad total de llamas
@@ -36,7 +37,7 @@ function App() {
     if (llama.quantity > 1) {
       // Si la cantidad de la llama es mayor a 1, reduce la cantidad
       const llamas = allLlamas.map((item) =>
-        item.id === llama.id ? { ...item, quantity: item.quantity - 1 } : item
+        item.id === llama.id ? { ...item, quantity: item.quantity - 1 } : item,
       );
       setTotal(total - llama.price); // Resta el precio de una llama al total
       setLlamaCount(llamaCount - 1); // Reduce en 1 la cantidad total de llamas
@@ -60,7 +61,7 @@ function App() {
     setAllLlamas([]);
     setLlamaCount(0);
     setTotal(0);
-    alert("¡Llamas compradas!");
+    alert('¡Llamas compradas!');
   };
 
   return (
@@ -75,14 +76,14 @@ function App() {
         onBuyCart={onBuyCart}
       />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path='/' element={<Landing />} />
         <Route
-          path="/store"
+          path='/store'
           element={<Store onAddLlama={onAddLlama} total={total} />}
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about" element={<About />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/about' element={<About />} />
       </Routes>
       <Footer />
     </>
