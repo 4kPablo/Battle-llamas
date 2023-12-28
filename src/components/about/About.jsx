@@ -175,7 +175,7 @@ export const About = () => {
 
         <div className='flex w-48 border-t-2 rounded-lg border-white' />
 
-        <section className='flex flex-col justify-center p-7'>
+        <section className='flex flex-col justify-center items-center p-7'>
           <IoIosWarning className='flex w-full text-9xl my-3 text-white' />
           <h2 className='text-center font-space-grotesk text-4xl md:text-5xl font-bold text-white mb-3'>
             DISCLAIMER FINAL
@@ -197,7 +197,7 @@ export const About = () => {
             Gracias por visitar BATTLE LLAMAS. Si tienes alguna pregunta o
             inquietud, no dudes en ponerte en contacto con nosotros.
           </p>
-          <button className='text-center font-bold text-black hover:text-white bg-white hover:bg-[#a6121f] active:bg-[#a6121f] active:text-white rounded-lg border-1 text-lg py-0.5 px-2.5'>
+          <button className='text-center font-bold text-black hover:text-white bg-white hover:bg-[#a6121f] active:bg-[#a6121f] active:text-white rounded-lg border-1 text-lg w-full sm:w-40 py-0.5 px-2.5'>
             Contacto
           </button>
         </section>

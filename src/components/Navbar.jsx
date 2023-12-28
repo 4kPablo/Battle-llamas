@@ -195,7 +195,6 @@ const Navbar = ({
         <h1 className=' text-xl text-center mt-4 text-[#D9BD8B]'>Carrito</h1>
         {llamaCount ? (
           <>
-            {}
             {allLlamas.map((product) => (
               <CartProduct
                 key={product.id}

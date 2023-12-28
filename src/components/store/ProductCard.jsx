@@ -4,29 +4,30 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
   const { height, width } = useWindowDimensions();
 
-  if (width > 880) {
+  if (width > 600) {
     return (
       // Cards verticales (💻)
-      <li className='flex flex-col p-4 gap-10 m-2 w-80 items-center place-s rounded-xl bg-black select-none'>
-        <img
-          className='flex flex-1 w-72 object-cover rounded-xl p-1'
-          src={product.img}
-        />
+      <li className='flex flex-col p-4 gap-10 m-2 w-64 lg:w-80 items-center justify-between place-s rounded-xl bg-black select-none'>
+        <img className='flex w-64 lg:w-72 rounded-xl p-1' src={product.img} />
 
         <div
-          className='flex flex-4 flex-col text-center w-full hover:cursor-pointer'
+          className='flex flex-col text-center w-full hover:cursor-pointer'
           onClick={() => toggleDetails(product)}
         >
-          <h2 className=' text-xl text-white'>{product.title}</h2>
-          <h2 className=' text-xl text-white'>{product.subtitle}</h2>
-          <p className=' text-sm text-[#D9BD8B]'>ⓘ Click para ver más</p>
+          <h2 className='text-lg lg:text-xl text-white'>{product.title}</h2>
+          <h2 className='text-lg hidden lg:inline text-white'>
+            {product.subtitle}
+          </h2>
+          <p className='text-sm text-[#D9BD8B] hover:text-white'>
+            ⓘ Click para ver más
+          </p>
         </div>
 
-        <div className='flex flex-4 w-full justify-between items-center text-center'>
-          <p className='text-xl text-white'>$ {product.price}</p>
+        <div className='flex w-full justify-between items-center text-center'>
+          <p className='lg:text-xl text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='flex bg-[#a6121f]  text-center font-bold py-1 px-3 rounded-xl border-1 hover:text-[#D9BD8B] text-white text-lg'
+            className='flex bg-[#a6121f] text-center font-bold py-1 px-3 rounded-xl border-1 hover:text-[#D9BD8B] text-white lg:text-lg'
           >
             Agregar al carrito
           </button>
