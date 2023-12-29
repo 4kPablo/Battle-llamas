@@ -1,14 +1,28 @@
 import React from 'react';
+import { products } from '../../products';
 
-export const CategoryFilter = ({ allCategories }) => {
-  console.log(allCategories);
+export const CategoryFilter = ({ allCategories, setRenderedProducts }) => {
+  const filterProducts = (category) => {
+    if (category === 'Todo') {
+      setRenderedProducts(products);
+    } else {
+      let filteredProducts = products.filter((product) => {
+        return product.category === category;
+      });
+      setRenderedProducts(filteredProducts);
+    }
+  };
+
   return (
-    <ul className='flex overflow-x-auto min-[850px]:place-content-center text-center items-center no-scrollbar my-3 gap-2 text-white'>
+    <ul className='flex overflow-x-auto min-[1047px]:place-content-center text-center items-center no-scrollbar my-3 gap-2 select-none text-white'>
       {allCategories.map((category) => {
         return (
           <li
-            class='rounded-full hover:bg-white hover:border-white hover:text-black hover:cursor-pointer pointer-events-none whitespace-nowrap border-2 h-fit w-fit px-3'
+            className='rounded-full hover:bg-white hover:border-white hover:text-black hover:cursor-pointer whitespace-nowrap border-2 h-fit w-fit px-3'
             key={allCategories.indexOf(category)}
+            onClick={() => {
+              filterProducts(category);
+            }}
           >
             {category}
           </li>

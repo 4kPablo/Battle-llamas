@@ -3,6 +3,7 @@ import { products } from '../../products.js';
 import { useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { CategoryFilter } from './CategoryFilter.jsx';
+import { redirect } from 'react-router-dom';
 
 const Store = ({ onAddLlama }) => {
   const [renderedProducts, setRenderedProducts] = useState(products);
@@ -12,8 +13,8 @@ const Store = ({ onAddLlama }) => {
     'Todo',
     'Combate',
     'Apoyo',
-    'Operaciones',
-    'Exploración',
+    'Operaciones Especiales',
+    'Exploración y Comunicación',
     'Guerra Técnica',
     'Liderazgo y Estrategia',
   ]);
@@ -31,8 +32,11 @@ const Store = ({ onAddLlama }) => {
         toggleDetails={toggleDetails}
         onAddLlama={onAddLlama}
       />
-      <div className='bg-[#0d0d0d] p-2 pb-7 pt-14 text-white'>
-        <CategoryFilter allCategories={allCategories} />
+      <div className='bg-[#0d0d0d] p-2 pb-7 pt-12 text-white'>
+        <CategoryFilter
+          allCategories={allCategories}
+          setRenderedProducts={setRenderedProducts}
+        />
         <ul className='flex flex-wrap place-content-center'>
           {renderedProducts.map((product) => {
             return (
