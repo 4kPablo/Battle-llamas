@@ -3,13 +3,14 @@ import { products } from '../../products.js';
 import { useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { CategoryFilter } from './CategoryFilter.jsx';
+import { PriceFilter } from './PriceFilter.jsx';
 import { redirect } from 'react-router-dom';
 
 const Store = ({ onAddLlama }) => {
   const [renderedProducts, setRenderedProducts] = useState(products);
   const [clickedProduct, setClickedProduct] = useState(null);
   const [visibleDetails, setVisibleDetails] = useState(false);
-  const [allCategories, setAllCategories] = useState([
+  const [allCategories] = useState([
     'Todo',
     'Combate',
     'Apoyo',
@@ -32,11 +33,14 @@ const Store = ({ onAddLlama }) => {
         toggleDetails={toggleDetails}
         onAddLlama={onAddLlama}
       />
-      <div className='bg-[#0d0d0d] p-2 pb-7 pt-12 text-white'>
-        <CategoryFilter
-          allCategories={allCategories}
-          setRenderedProducts={setRenderedProducts}
-        />
+      <div className='bg-[#161616] text-white p-2 pb-7 pt-12'>
+        <div className='flex flex-col fixed text-center items-center -left-1 py-2 gap-1 w-full select-none bg-black text-white'>
+          <PriceFilter setRenderedProducts={setRenderedProducts} />
+          <CategoryFilter
+            allCategories={allCategories}
+            setRenderedProducts={setRenderedProducts}
+          />
+        </div>
         <ul className='flex flex-wrap place-content-center'>
           {renderedProducts.map((product) => {
             return (

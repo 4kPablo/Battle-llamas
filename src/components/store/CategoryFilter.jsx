@@ -14,7 +14,7 @@ export const CategoryFilter = ({ allCategories, setRenderedProducts }) => {
   };
 
   return (
-    <ul className='flex overflow-x-auto min-[1047px]:place-content-center text-center items-center no-scrollbar my-3 gap-2 select-none text-white'>
+    <ul className='flex  text-center items-center -left-1 p-2 w-full select-none overflow-x-auto min-[1047px]:place-content-center no-scrollbar gap-2'>
       {allCategories.map((category) => {
         return (
           <li

@@ -1,4 +1,5 @@
 import useWindowDimensions from '../../windowDimensions';
+import { TbShoppingCartPlus } from 'react-icons/tb';
 import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 
 const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
@@ -51,13 +52,13 @@ const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
           <p className=' text-base text-[#D9BD8B]'>ⓘ Toca para ver más</p>
         </div>
 
-        <div className='flex flex-col flex-4 min-w-[73px] gap-1 justify-center items-center text-center'>
-          <p className=' text-xl text-white'>$ {product.price}</p>
+        <div className='flex flex-col flex-4 min-w-[80px] gap-1 justify-center items-center text-center'>
+          <p className=' text-base text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='text-center w-full p-1 rounded-xl bg-[#a6121f] active:bg-[#a6121ea1] text-white text-xs xl:text-lg'
+            className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl bg-[#a6121f] active:bg-[#a6121ea1] text-white text-lg xl:text-lg'
           >
-            Añadir al carrito
+            <TbShoppingCartPlus className='text-center' />
           </button>
         </div>
       </li>

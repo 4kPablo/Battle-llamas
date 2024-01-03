@@ -173,10 +173,10 @@ export const products = [
     id: 18,
     img: 'nuclear.jpg',
     title: 'Alpaca de Guerra Nuclear',
-    subtitle: '"Sol Rojo"',
-    price: 20000,
+    subtitle: '"Segundo Sol"',
+    price: 1800000,
     description:
-      '"Sol Rojo" es una alpaca de guerra que puede detonar una bomba nuclear en el territorio enemigo. Con su traje protector y su dispositivo de activación, puede infiltrarse y sacrificar su vida por una causa mayor.',
+      '"Segundo Sol" es una alpaca de guerra que puede detonar una bomba nuclear en el territorio enemigo. Con su traje protector y su dispositivo de activación, puede infiltrarse y sacrificar su vida por una causa mayor.',
     category: 'Guerra Técnica',
   },
   {
