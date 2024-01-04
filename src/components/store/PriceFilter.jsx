@@ -16,7 +16,7 @@ export const PriceFilter = ({ setRenderedProducts }) => {
       return product.price >= minPrice && product.price <= maxPrice;
     });
     setRenderedProducts(filteredProducts);
-    console.log('minPrice: ', minPrice, 'maxPrice', maxPrice);
+    // console.log('minPrice: ', minPrice, 'maxPrice', maxPrice);
   };
 
   return (

@@ -8,7 +8,7 @@ const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
   if (width > 600) {
     return (
       // Cards verticales (💻)
-      <li className='flex flex-col p-4 gap-10 m-2 w-64 lg:w-80 items-center justify-between place-s rounded-xl bg-black select-none'>
+      <li className='flex flex-col p-2 lg:p-4 gap-10 m-2 w-64 lg:w-80 items-center justify-between place-s rounded-xl bg-black select-none'>
         <img className='flex w-64 lg:w-72 rounded-xl p-1' src={product.img} />
 
         <div

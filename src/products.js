@@ -67,7 +67,7 @@ export const products = [
     price: 9800,
     description:
       '"Ojos de Águila" es una alpaca de guerra con una visión excepcional y una aguda intuición para detectar peligros. Sus sentidos altamente desarrollados la hacen esencial para patrullas y vigilancia de largo alcance.',
-    category: 'Operaciones Especiales',
+    category: 'Apoyo',
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const products = [
     price: 8500,
     description:
       '"Voz Clara" es una alpaca de guerra equipada con equipos de comunicación avanzados. Con la capacidad de establecer redes de comunicación seguras, es una pieza clave para mantener la coordinación entre unidades en el campo de batalla.',
-    category: 'Exploración y Comunicación',
+    category: 'Apoyo',
   },
   {
     id: 9,
