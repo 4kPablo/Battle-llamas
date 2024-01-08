@@ -1,19 +1,20 @@
-import HeroBackground from './HeroBackground';
-import HeroCard from './HeroCard';
-import HeroStats from './HeroStats';
+import useWindowDimensions from '../../windowDimensions';
 import versatilidad from './assets/versatilidad.jpg';
 import noagresivas from './assets/noagresivas.jpg';
 import bajocosto from './assets/bajocosto.jpg';
 import proteccion from './assets/proteccion.jpg';
 import conservacion from './assets/conservacion.jpg';
-import LandingHorizontalCard from './LandingHorizontalCard';
-import LandingVerticalCard from './LandingVerticalCard';
-import useWindowDimensions from '../../windowDimensions';
+import { LandingHorizontalCard } from './LandingHorizontalCard';
+import { LandingVerticalCard } from './LandingVerticalCard';
+import { HeroBackground } from './HeroBackground';
+import { HeroCard } from './HeroCard';
+import { HeroStats } from './HeroStats';
 import { MdDoubleArrow } from 'react-icons/md';
 import { IconContext } from 'react-icons';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { CustomLink } from '../CustomLink';
+import { FeaturedProducts } from './FeaturedProducts';
 
-function Landing() {
+export const Landing = () => {
   const { height, width } = useWindowDimensions();
   const backgroundHero = '';
   const classNames = [];
@@ -23,12 +24,6 @@ function Landing() {
     landingTitle = '- BATTLE LLAMAS -';
   } else {
     landingTitle = 'BATTLE LLAMAS';
-  }
-
-  if (width > 640) {
-    classNames.push('flex-row');
-  } else {
-    classNames.push('flex-col');
   }
 
   return (
@@ -56,12 +51,7 @@ function Landing() {
               description='A diferencia de otros animales de carga o transporte en el campo de batalla, las alpacas de guerra no son naturalmente agresivas, lo que las hace fiables y seguras en entornos sensibles. También son capaces de distinguir entre amigos y enemigos, brindando seguridad en el combate.'
             />
           </div>
-          <div
-            className={
-              'flex justify-between gap-20 gap-x-5 w-full mb-20 sm:my-20' +
-              classNames.join(' ')
-            }
-          >
+          <div className='flex flex-col min-[640px]:flex-row justify-between gap-20 gap-x-5 w-full mb-20 sm:my-20'>
             <LandingVerticalCard
               img={bajocosto}
               title='Bajo costo de mantenimiento'
@@ -86,13 +76,14 @@ function Landing() {
           HAZ QUE TU ENEMIGO TIEMBLE
         </h1>
 
+        <FeaturedProducts />
+
         <div className='flex items-center justify-center gap-5'>
           <IconContext.Provider
             value={{ color: '#D9BD8B', size: '76px', className: 'IconContext' }}
           >
             <MdDoubleArrow />
             <CustomLink
-              onClick={scrollToTop}
               to='/store'
               className='flex bg-[#a6121f] border-[#a6121f]  border-2 text-center py-2 px-7 rounded-xl text-white'
             >
@@ -104,23 +95,4 @@ function Landing() {
       </div>
     </div>
   );
-}
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 };
-
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <div className={isActive ? 'text-slate-500' : ''}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </div>
-  );
-}
-
-export default Landing;

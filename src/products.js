@@ -92,7 +92,7 @@ export const products = [
   {
     id: 10,
     img: 'demoliciones.jpg',
-    title: 'Alpaca Especialista en Demoliciones',
+    title: 'Alpaca de Demolición',
     subtitle: '"Tormenta Explosiva"',
     price: 12700,
     description:

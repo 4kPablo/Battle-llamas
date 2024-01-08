@@ -1,6 +1,6 @@
 import useWindowDimensions from '../../windowDimensions';
 
-const LandingVerticalCard = ({ img, title, description }) => {
+export const LandingVerticalCard = ({ img, title, description }) => {
   const { height, width } = useWindowDimensions();
 
   if (width > 640) {
@@ -28,5 +28,3 @@ const LandingVerticalCard = ({ img, title, description }) => {
     );
   }
 };
-
-export default LandingVerticalCard;

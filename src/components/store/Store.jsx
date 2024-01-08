@@ -1,11 +1,11 @@
-import ProductCard from './ProductCard';
+import { ProductCard } from './ProductCard';
 import { products } from '../../products.js';
 import { useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { UnifiedFilter } from './UnifiedFIlters.jsx';
-import { redirect } from 'react-router-dom';
+// import { redirect } from 'react-router-dom';
 
-const Store = ({ onAddLlama }) => {
+export const Store = ({ onAddLlama }) => {
   const [renderedProducts, setRenderedProducts] = useState(products);
   const [clickedProduct, setClickedProduct] = useState(null);
   const [visibleDetails, setVisibleDetails] = useState(false);
@@ -54,5 +54,3 @@ const Store = ({ onAddLlama }) => {
     </>
   );
 };
-
-export default Store;

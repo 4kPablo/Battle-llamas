@@ -1,7 +1,7 @@
 import useWindowDimensions from '../../windowDimensions';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { CustomLink } from '../CustomLink';
 
-function HeroCard() {
+export const HeroCard = () => {
   const { height, width } = useWindowDimensions();
 
   if (width > 880) {
@@ -15,14 +15,12 @@ function HeroCard() {
         <div className='flex flex-col gap-2.5'>
           <CustomLink
             className='flex bg-[#a6121f] border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
-            onClick={scrollToTop}
             to='/store'
           >
             <p className='text-sm xl:text-lg'>TIENDA</p>
           </CustomLink>
           <CustomLink
             className='flex border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
-            onClick={scrollToTop}
             to='/login'
           >
             <p className='text-sm xl:text-lg'>LOGIN</p>
@@ -41,14 +39,12 @@ function HeroCard() {
         <div className='flex flex-col gap-2.5 w-1/2 sm:w-3/12'>
           <CustomLink
             className='flex bg-[#a6121f] border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
-            onClick={scrollToTop}
             to='/store'
           >
             <p className='text-sm xl:text-lg'>TIENDA</p>
           </CustomLink>
           <CustomLink
             className='flex border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
-            onClick={scrollToTop}
             to='/login'
           >
             <p className='text-sm xl:text-lg'>LOGIN</p>
@@ -57,23 +53,4 @@ function HeroCard() {
       </div>
     );
   }
-}
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 };
-
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <div className={isActive ? 'text-slate-500' : ''}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </div>
-  );
-}
-
-export default HeroCard;

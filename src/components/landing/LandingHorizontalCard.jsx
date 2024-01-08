@@ -1,6 +1,11 @@
 import useWindowDimensions from '../../windowDimensions';
 
-const LandingHorizontalCard = ({ img, title, description, imgPosition }) => {
+export const LandingHorizontalCard = ({
+  img,
+  title,
+  description,
+  imgPosition,
+}) => {
   const { height, width } = useWindowDimensions();
   const classNames = [];
 
@@ -49,5 +54,3 @@ const LandingHorizontalCard = ({ img, title, description, imgPosition }) => {
     );
   }
 };
-
-export default LandingHorizontalCard;

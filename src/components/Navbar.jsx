@@ -1,7 +1,7 @@
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { PiShoppingCartSimpleBold as CartIcon } from 'react-icons/pi';
 import { IoClose as CloseIcon } from 'react-icons/io5';
 import { IoMenu as MenuIcon } from 'react-icons/io5';
+import { CustomLink } from './CustomLink';
 import { useState } from 'react';
 
 const Navbar = ({
@@ -17,7 +17,6 @@ const Navbar = ({
   const [askingDeletion, setAskingDeletion] = useState(false);
   const [askingBuy, setAskingBuy] = useState(false);
   const [isNavActive, setIsNavActive] = useState(false);
-  // const [productsInCart, setProductsInCart] = useState([])
 
   const toggleCart = () => {
     setisCartActive(!isCartActive);
@@ -33,7 +32,6 @@ const Navbar = ({
         <div className='flex justify-between w-full max-w-7xl'>
           {/* Logo */}
           <CustomLink
-            onClick={scrollToTop}
             className='font-space-grotesk text-black w-auto outlined-text text-2xl'
             to='/'
           >
@@ -41,16 +39,10 @@ const Navbar = ({
           </CustomLink>
 
           {/* Links (💻) */}
-          <div className='hidden sm:flex items-center font-space-grotesk text-white text-xl gap-5'>
-            <CustomLink onClick={scrollToTop} to='/store'>
-              TIENDA
-            </CustomLink>
-            <CustomLink onClick={scrollToTop} to='/about'>
-              NOSOTROS
-            </CustomLink>
-            <CustomLink onClick={scrollToTop} to='/login'>
-              ACCEDER
-            </CustomLink>
+          <div className='hidden min-[620px]:flex items-center font-space-grotesk text-white text-xl gap-5'>
+            <CustomLink to='/store'>TIENDA</CustomLink>
+            <CustomLink to='/about'>NOSOTROS</CustomLink>
+            <CustomLink to='/login'>ACCEDER</CustomLink>
 
             {/* <IconContext.Provider value={{className: "bg-red-300" }}> */}
             <div className='flex items-center justify-center place-content-center text-center'>
@@ -69,7 +61,7 @@ const Navbar = ({
           </div>
 
           {/* Nav móvil (📱) */}
-          <div className='flex gap-5 sm:hidden'>
+          <div className='flex gap-5 min-[620px]:hidden'>
             <div className='flex items-center justify-center place-content-center text-center'>
               <CartIcon
                 className='text-white text-xl cursor-pointer'
@@ -85,7 +77,7 @@ const Navbar = ({
             </div>
             <div
               onClick={toggleMobileNav}
-              className='flex items-center hover:cursor-pointer sm:hidden'
+              className='flex items-center hover:cursor-pointer min-[620px]:hidden'
             >
               <MenuIcon
                 className={isNavActive ? 'hidden' : 'text-white text-2xl'}
@@ -104,15 +96,9 @@ const Navbar = ({
                   : 'flex flex-col absolute bg-black select-none justify-center items-center font-space-grotesk text-white text-2xl transition-all ease-out -translate-y-[120%] z-10 top-0 left-0 gap-7 w-full mt-12 py-10 my-0 mx-auto'
               }
             >
-              <CustomLink onClick={scrollToTop} to='/store'>
-                STORE
-              </CustomLink>
-              <CustomLink onClick={scrollToTop} to='/login'>
-                LOGIN
-              </CustomLink>
-              <CustomLink onClick={scrollToTop} to='/about'>
-                ABOUT US
-              </CustomLink>
+              <CustomLink to='/store'>STORE</CustomLink>
+              <CustomLink to='/login'>LOGIN</CustomLink>
+              <CustomLink to='/about'>ABOUT US</CustomLink>
             </div>
           </div>
         </div>
@@ -286,25 +272,5 @@ const CartProduct = ({ product, onAddLlama, onRemoveLlama }) => {
     </li>
   );
 };
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  // setIsNavActive(false)
-  // setisCartActive(false)
-  // Estas dos acciones hacen que se recargue la página al cambiar de sección
-};
-
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <div className={isActive ? 'text-slate-500' : ''}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </div>
-  );
-}
 
 export default Navbar;

@@ -1,8 +1,7 @@
 import useWindowDimensions from '../../windowDimensions';
-import { TbShoppingCartPlus } from 'react-icons/tb';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { TbShoppingCartPlus as AddToCartIcon } from 'react-icons/tb';
 
-const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
+export const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
   const { height, width } = useWindowDimensions();
 
   if (width > 600) {
@@ -58,12 +57,10 @@ const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
             onClick={() => onAddLlama(product)}
             className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl bg-[#a6121f] active:bg-[#a6121ea1] text-white text-lg xl:text-lg'
           >
-            <TbShoppingCartPlus className='text-center' />
+            <AddToCartIcon className='text-center' />
           </button>
         </div>
       </li>
     );
   }
 };
-
-export default ProductCard;

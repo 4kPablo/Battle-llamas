@@ -1,14 +1,13 @@
-import { React, useState } from 'react';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { RiFocus2Line } from 'react-icons/ri';
 import { IoIosPerson } from 'react-icons/io';
 import { IoSparkles } from 'react-icons/io5';
 import { IoChatbubbles } from 'react-icons/io5';
 import { RiMedalFill } from 'react-icons/ri';
 import { IoIosWarning } from 'react-icons/io';
+import { CustomLink } from '../CustomLink';
 
 export const About = () => {
-  const [mobileView, setMobileView] = useState();
-
   return (
     <div className='flex flex-col items-center bg-[#0d0d0d]'>
       <div className='flex flex-col items-center 2xl:h-screen w-full bg-black'>
@@ -198,7 +197,7 @@ export const About = () => {
             inquietud, no dudes en ponerte en contacto con nosotros.
           </p>
           <button className='text-center font-bold text-black hover:text-white bg-white hover:bg-[#a6121f] active:bg-[#a6121f] active:text-white rounded-lg border-1 text-lg w-full sm:w-40 py-0.5 px-2.5'>
-            Contacto
+            <CustomLink to='/contact'>Contacto</CustomLink>
           </button>
         </section>
       </div>

@@ -1,4 +1,4 @@
-function HeroStats() {
+export const HeroStats = () => {
   return (
     <div className='flex text-center w-full  my-10 lg:my-20'>
       <div className='flex-1'>
@@ -35,6 +35,4 @@ function HeroStats() {
       </div>
     </div>
   );
-}
-
-export default HeroStats;
+};

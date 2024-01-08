@@ -1,6 +1,12 @@
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { CustomLink } from '../CustomLink';
 
-const Register = () => {
+export const Register = () => {
+  const notificarRegistro = () => {
+    let email_filled = document.forms['registration_form']['email'].value;
+    if (email_filled) {
+      alert('¡Confirmación necesaria! Revise en su casilla de correo');
+    }
+  };
   return (
     <div className='flex justify-center bg-[#0d0d0d] h-full p-7'>
       <div className='flex justify-center rounded-xl p-10 bg-black mt-12 w-full sm:w-[22em]'>
@@ -45,11 +51,9 @@ const Register = () => {
             Registrarse
           </button>
           <div className='flex text-gray-500 mt-4' href='#'>
-            {' '}
             ¿Ya tenés cuenta?
             <span className='text-[#D9BD8B] hover:underline'>
-              <CustomLink className='ml-1' onClick={scrollToTop} to='/login'>
-                {' '}
+              <CustomLink className='ml-1' to='/login'>
                 Logueate
               </CustomLink>
             </span>
@@ -59,29 +63,3 @@ const Register = () => {
     </div>
   );
 };
-
-const notificarRegistro = () => {
-  let email_filled = document.forms['registration_form']['email'].value;
-  if (email_filled) {
-    alert('¡Confirmación necesaria! Revise en su casilla de correo');
-  }
-};
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-};
-
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to);
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
-
-  return (
-    <div className={isActive ? 'text-slate-500' : ''}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </div>
-  );
-}
-
-export default Register;

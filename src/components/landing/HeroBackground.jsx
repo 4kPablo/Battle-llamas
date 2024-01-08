@@ -3,7 +3,7 @@ import backgroundHero_big from './assets/hero_big.png';
 import backgroundHero_medium from './assets/hero_medium.jpeg';
 import backgroundHero_small from './assets/hero_small.jpeg';
 
-const HeroBackground = ({ img, title, description, imgPosition }) => {
+export const HeroBackground = ({ img, title, description, imgPosition }) => {
   const { height, width } = useWindowDimensions();
 
   if (width > 880) {
@@ -14,5 +14,3 @@ const HeroBackground = ({ img, title, description, imgPosition }) => {
     return <img className='backgroundHero' src={backgroundHero_small} />;
   }
 };
-
-export default HeroBackground;
