@@ -11,7 +11,6 @@ export const FormTextarea = ({
 }) => {
   return (
     <div>
-      {/* <label htmlFor={label}>{label}</label> */}
       <Field
         className={className}
         placeholder={placeholder}

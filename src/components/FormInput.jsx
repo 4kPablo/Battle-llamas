@@ -11,7 +11,6 @@ export const FormInput = ({
 }) => {
   return (
     <div>
-      {/* <label htmlFor={label}>{label}</label> */}
       <Field
         className={className}
         placeholder={placeholder}

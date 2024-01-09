@@ -1,14 +1,15 @@
 import { ProductCard } from './ProductCard';
 import { products } from '../../products.js';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { UnifiedFilter } from './UnifiedFIlters.jsx';
-// import { redirect } from 'react-router-dom';
+import { Context } from '../CartContext.jsx';
 
-export const Store = ({ onAddLlama }) => {
+export const Store = () => {
   const [renderedProducts, setRenderedProducts] = useState(products);
   const [clickedProduct, setClickedProduct] = useState(null);
   const [visibleDetails, setVisibleDetails] = useState(false);
+  const { onAddLlama } = useContext(Context);
   const [allCategories] = useState([
     'Todo',
     'Combate',

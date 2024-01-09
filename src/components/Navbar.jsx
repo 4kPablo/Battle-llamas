@@ -2,21 +2,21 @@ import { PiShoppingCartSimpleBold as CartIcon } from 'react-icons/pi';
 import { IoClose as CloseIcon } from 'react-icons/io5';
 import { IoMenu as MenuIcon } from 'react-icons/io5';
 import { CustomLink } from './CustomLink';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Context } from './CartContext';
 
-const Navbar = ({
-  allLlamas,
-  total,
-  llamaCount,
-  onAddLlama,
-  onRemoveLlama,
-  onDeleteCart,
-  onBuyCart,
-}) => {
+const Navbar = () => {
   const [isCartActive, setisCartActive] = useState(false);
   const [askingDeletion, setAskingDeletion] = useState(false);
   const [askingBuy, setAskingBuy] = useState(false);
   const [isNavActive, setIsNavActive] = useState(false);
+  const { allLlamas } = useContext(Context);
+  const { total } = useContext(Context);
+  const { llamaCount } = useContext(Context);
+  const { onAddLlama } = useContext(Context);
+  const { onRemoveLlama } = useContext(Context);
+  const { onDeleteCart } = useContext(Context);
+  const { onBuyCart } = useContext(Context);
 
   const toggleCart = () => {
     setisCartActive(!isCartActive);
