@@ -1,34 +1,20 @@
+import { React, useContext, useState } from 'react';
 import { PiShoppingCartSimpleBold as CartIcon } from 'react-icons/pi';
 import { IoClose as CloseIcon } from 'react-icons/io5';
 import { IoMenu as MenuIcon } from 'react-icons/io5';
 import { CustomLink } from './CustomLink';
-import { useContext, useState } from 'react';
-import { Context } from './CartContext';
+import { Context } from './cart/CartContext';
+import { Cart } from './cart/Cart';
 
-const Navbar = () => {
-  const [isCartActive, setisCartActive] = useState(false);
-  const [askingDeletion, setAskingDeletion] = useState(false);
-  const [askingBuy, setAskingBuy] = useState(false);
+export const Navbar = () => {
   const [isNavActive, setIsNavActive] = useState(false);
-  const { allLlamas } = useContext(Context);
-  const { total } = useContext(Context);
+  const { isCartActive } = useContext(Context);
+  const { setIsCartActive } = useContext(Context);
   const { llamaCount } = useContext(Context);
-  const { onAddLlama } = useContext(Context);
-  const { onRemoveLlama } = useContext(Context);
-  const { onDeleteCart } = useContext(Context);
-  const { onBuyCart } = useContext(Context);
-
-  const toggleCart = () => {
-    setisCartActive(!isCartActive);
-  };
-
-  const toggleMobileNav = () => {
-    setIsNavActive(!isNavActive);
-  };
 
   return (
     <>
-      <nav className="flex fixed bg-black select-none	justify-center items-center font-['Space_Grotesk'] z-30 h-12 w-full my-0 mx-auto px-10">
+      <nav className='flex fixed bg-black select-none	justify-center items-center z-30 h-12 w-full my-0 mx-auto px-10'>
         <div className='flex justify-between w-full max-w-7xl'>
           {/* Logo */}
           <CustomLink
@@ -39,7 +25,7 @@ const Navbar = () => {
           </CustomLink>
 
           {/* Links (💻) */}
-          <div className='hidden min-[620px]:flex items-center font-space-grotesk text-white text-xl gap-5'>
+          <div className='hidden min-[620px]:flex items-center text-white text-xl gap-5'>
             <CustomLink to='/store'>TIENDA</CustomLink>
             <CustomLink to='/about'>NOSOTROS</CustomLink>
             <CustomLink to='/login'>ACCEDER</CustomLink>
@@ -48,7 +34,9 @@ const Navbar = () => {
             <div className='flex items-center justify-center place-content-center text-center'>
               <CartIcon
                 className='cursor-pointer'
-                onClick={toggleCart}
+                onClick={() => {
+                  setIsCartActive(!isCartActive);
+                }}
               ></CartIcon>
               {llamaCount ? (
                 <div className='flex text-[#D9BD8B] text-base ml-1'>
@@ -61,11 +49,13 @@ const Navbar = () => {
           </div>
 
           {/* Nav móvil (📱) */}
-          <div className='flex gap-5 min-[620px]:hidden'>
+          <nav className='flex gap-5 min-[620px]:hidden'>
             <div className='flex items-center justify-center place-content-center text-center'>
               <CartIcon
                 className='text-white text-xl cursor-pointer'
-                onClick={toggleCart}
+                onClick={() => {
+                  setIsCartActive(!isCartActive);
+                }}
               ></CartIcon>
               {llamaCount ? (
                 <div className='flex text-[#D9BD8B] text-base ml-1'>
@@ -76,7 +66,9 @@ const Navbar = () => {
               )}
             </div>
             <div
-              onClick={toggleMobileNav}
+              onClick={() => {
+                setIsNavActive(!isNavActive);
+              }}
               className='flex items-center hover:cursor-pointer min-[620px]:hidden'
             >
               <MenuIcon
@@ -96,181 +88,29 @@ const Navbar = () => {
                   : 'flex flex-col absolute bg-black select-none justify-center items-center font-space-grotesk text-white text-2xl transition-all ease-out -translate-y-[120%] z-10 top-0 left-0 gap-7 w-full mt-12 py-10 my-0 mx-auto'
               }
             >
-              <CustomLink to='/store'>STORE</CustomLink>
-              <CustomLink to='/login'>LOGIN</CustomLink>
-              <CustomLink to='/about'>ABOUT US</CustomLink>
+              <CustomLink
+                onClick={() => setIsNavActive(!isNavActive)}
+                to='/store'
+              >
+                STORE
+              </CustomLink>
+              <CustomLink
+                onClick={() => setIsNavActive(!isNavActive)}
+                to='/login'
+              >
+                LOGIN
+              </CustomLink>
+              <CustomLink
+                onClick={() => setIsNavActive(!isNavActive)}
+                to='/about'
+              >
+                ABOUT US
+              </CustomLink>
             </div>
-          </div>
+          </nav>
         </div>
       </nav>
-
-      {/* Confirmación de borrar carrito */}
-      <section
-        className={
-          askingDeletion
-            ? 'flex flex-col fixed place-content-center items-center h-screen w-full sm:w-96 right-0 z-50 top-12 bg-[#000c] sm:bg-transparent sm:backdrop-blur-sm text-white'
-            : 'hidden'
-        }
-      >
-        <div className='flex flex-col m-3 w-72 h-28 gap-2 px-2 z-30 place-content-center rounded-lg text-white bg-black outline outline-1 outline-white'>
-          <p className='text-2xl text-center'>¿Borrar carrito?</p>
-          <div className='flex text-xl place-content-around'>
-            <button
-              className='hover:bg-[#a6121f]  rounded-xl py-2 px-8'
-              onClick={() => {
-                setAskingDeletion(false);
-                onDeleteCart();
-                toggleCart();
-              }}
-            >
-              Borrar
-            </button>
-            <button
-              className='hover:bg-white hover:text-black rounded-xl py-2 px-7'
-              onClick={() => {
-                setAskingDeletion(false);
-              }}
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Confirmación de comprar carrito */}
-      <section
-        className={
-          askingBuy
-            ? 'flex flex-col fixed place-content-center items-center h-screen w-full sm:w-96 right-0 z-50 top-12 bg-[#000c] sm:bg-transparent sm:backdrop-blur-sm text-white'
-            : 'hidden'
-        }
-      >
-        <div className='flex flex-col m-3 w-80 h-28 gap-2 px-2 z-30 place-content-center rounded-lg text-white bg-black outline outline-1 outline-white'>
-          <p className='text-2xl text-center'>¿Proceder con la compra?</p>
-          <div className='flex text-xl place-content-around'>
-            <button
-              className='hover:bg-[#D9BD8B] hover:text-black rounded-xl py-2 px-8'
-              onClick={() => {
-                setAskingBuy(false);
-                onBuyCart();
-                toggleCart();
-              }}
-            >
-              Comprar
-            </button>
-            <button
-              className='hover:bg-white hover:text-black rounded-xl py-2 px-7'
-              onClick={() => {
-                setAskingBuy(false);
-              }}
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Carrito */}
-      <div
-        className={
-          isCartActive
-            ? 'flex flex-col fixed h-screen w-full sm:w-96 right-0 gap-3 top-12 p-4 z-40 bg-black text-white transition-all ease-out'
-            : 'flex flex-col fixed h-screen w-full sm:w-96 right-0 gap-3 top-12 p-4 z-40 bg-black text-white translate-x-full transition-all ease-out'
-        }
-      >
-        <h1 className=' text-xl text-center mt-4 text-[#D9BD8B]'>Carrito</h1>
-        {llamaCount ? (
-          <>
-            {allLlamas.map((product) => (
-              <CartProduct
-                key={product.id}
-                product={product}
-                allLlamas={allLlamas}
-                total={total}
-                llamaCount={llamaCount}
-                onAddLlama={onAddLlama}
-                onRemoveLlama={onRemoveLlama}
-                onDeleteCart={onDeleteCart}
-              />
-            ))}
-            {total ? (
-              <div className='flex flex-col gap-2 text-xl py-2 w-full'>
-                <div className='border-t-2 border-dotted'></div>
-                <div className='flex flex-row w-full place-content-between'>
-                  <h3>Total:</h3>
-                  <span className='text-xl'>$ {total}</span>
-                </div>
-                <div className='flex'>
-                  <button
-                    onClick={() => {
-                      setAskingBuy(true);
-                      console.log(askingBuy);
-                    }}
-                    className=' text-center py-2 w-full rounded-lg bg-white hover:bg-[#a6121f] text-black hover:text-white'
-                  >
-                    Comprar
-                  </button>
-                </div>
-                <p
-                  className='flex my-1 text-sm text-center place-content-center select-none hover:cursor-pointer hover:text-[#D9BD8B]'
-                  onClick={() => setAskingDeletion(true)}
-                >
-                  Vaciar carrito
-                </p>
-              </div>
-            ) : (
-              <></>
-            )}
-          </>
-        ) : (
-          <>
-            <p className='text-center gap-1 p-2 mb-2 w-full items-center rounded-xl select-none'>
-              El carrito está vacío
-            </p>
-          </>
-        )}
-      </div>
+      <Cart />
     </>
   );
 };
-
-const CartProduct = ({ product, onAddLlama, onRemoveLlama }) => {
-  return (
-    <li
-      className='flex gap-2 w-full items-center rounded-xl select-none'
-      key={product.id}
-    >
-      <img
-        className='flex flex-1 w-20 object-cover rounded-xl'
-        src={product.img}
-      />
-
-      <div className='flex flex-4 flex-col justify-center w-full p-1 hover:cursor-pointer'>
-        <p className=' text-base font-bold text-white '>{product.title}</p>
-      </div>
-
-      <div className='flex flex-col flex-4 min-w-[73px] gap-1 justify-center items-center text-center'>
-        <p className=' text-xl text-white'>$ {product.price}</p>
-        <div className='flex rounded-lg bg-[#a6121f]'>
-          <button
-            className=' text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-[#D9BD8B] text-white text-lg'
-            onClick={() => onRemoveLlama(product)}
-          >
-            -
-          </button>
-          <button className=' text-center text-lg py-0.5 px-1 text-white'>
-            {product.quantity}
-          </button>
-          <button
-            className=' text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-[#D9BD8B] text-white text-lg'
-            onClick={() => onAddLlama(product)}
-          >
-            +
-          </button>
-        </div>
-      </div>
-    </li>
-  );
-};
-
-export default Navbar;

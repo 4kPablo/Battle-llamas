@@ -1,9 +1,9 @@
-import { ProductCard } from './ProductCard';
-import { products } from '../../products.js';
 import { useContext, useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { UnifiedFilter } from './UnifiedFIlters.jsx';
-import { Context } from '../CartContext.jsx';
+import { ProductCard } from './ProductCard';
+import { products } from '../../products.js';
+import { Context } from '../cart/CartContext.jsx';
 
 export const Store = () => {
   const [renderedProducts, setRenderedProducts] = useState(products);

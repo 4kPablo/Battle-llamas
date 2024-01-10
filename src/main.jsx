@@ -1,4 +1,4 @@
-import { ContextProvider } from './components/CartContext.jsx';
+import { ContextProvider } from './components/cart/CartContext.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import React from 'react';

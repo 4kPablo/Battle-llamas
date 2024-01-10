@@ -5,9 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'press-start': ['"Press Start 2P"', 'cursive'],
         'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
-        roboto: ['Roboto', 'sans-serif'],
       },
       screens: {
         sm: '576px',

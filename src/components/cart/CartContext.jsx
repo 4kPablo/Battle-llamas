@@ -3,11 +3,11 @@ import { createContext, useState } from 'react';
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const [allLlamas, setAllLlamas] = useState([]); // Almacena la lista de llamas en el carrito
-  const [llamaCount, setLlamaCount] = useState(0); // Almacena la cantidad total de llamas en el carrito
-  const [total, setTotal] = useState(0); // Almacena el precio total de todas las llamas en el carrito
+  const [isCartActive, setIsCartActive] = useState(false);
+  const [allLlamas, setAllLlamas] = useState([]);
+  const [llamaCount, setLlamaCount] = useState(0);
+  const [total, setTotal] = useState(0);
 
-  // Función para agregar una llama al carrito
   const onAddLlama = (llama) => {
     console.table(llama);
     if (allLlamas.find((item) => item.id === llama.id)) {
@@ -26,7 +26,6 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  // Función para quitar una llama del carrito
   const onRemoveLlama = (llama) => {
     if (llama.quantity > 1) {
       // Si la cantidad de la llama es mayor a 1, reduce la cantidad
@@ -68,6 +67,8 @@ export const ContextProvider = ({ children }) => {
         onRemoveLlama,
         onDeleteCart,
         onBuyCart,
+        isCartActive,
+        setIsCartActive,
       }}
     >
       {children}

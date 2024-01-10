@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { Formik, Form } from 'formik';
-import { FormInput } from '../FormInput';
-import { FormTextarea } from '../FormTextarea';
+import { FormInput } from './FormInput';
+import { FormTextarea } from './FormTextarea';
 import { formInitialValues } from '/src/formik/initialValues';
 import { validationSchema } from '/src/formik/validationSchema';
 
