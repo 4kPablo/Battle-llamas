@@ -27,7 +27,7 @@ export const Cart = () => {
           <p className='text-2xl text-center'>¿Borrar carrito?</p>
           <div className='flex text-xl place-content-around'>
             <button
-              className='hover:bg-[#a6121f] rounded-xl py-2 px-8'
+              className='hover:bg-tabasco-red rounded-xl py-2 px-8'
               onClick={() => {
                 setAskingDeletion(false);
                 onDeleteCart();
@@ -60,7 +60,7 @@ export const Cart = () => {
           <p className='text-2xl text-center'>¿Proceder con la compra?</p>
           <div className='flex text-xl place-content-around'>
             <button
-              className='hover:bg-[#D9BD8B] hover:text-black rounded-xl py-2 px-8'
+              className='hover:bg-birch-wood hover:text-black rounded-xl py-2 px-8'
               onClick={() => {
                 setAskingBuy(false);
                 onBuyCart();
@@ -89,7 +89,7 @@ export const Cart = () => {
             : 'flex flex-col fixed h-screen w-full sm:w-96 right-0 gap-3 top-12 p-4 z-40 bg-black text-white translate-x-full transition-all ease-out'
         }
       >
-        <h1 className=' text-xl text-center mt-4 text-[#D9BD8B]'>Carrito</h1>
+        <h1 className=' text-xl text-center mt-4 text-birch-wood'>Carrito</h1>
         {llamaCount ? (
           <>
             {allLlamas.map((product) => (
@@ -108,13 +108,13 @@ export const Cart = () => {
                       setAskingBuy(true);
                       console.log(askingBuy);
                     }}
-                    className=' text-center py-2 w-full rounded-lg bg-white hover:bg-[#a6121f] text-black hover:text-white'
+                    className=' text-center py-2 w-full rounded-lg bg-white hover:bg-tabasco-red text-black hover:text-white'
                   >
                     Comprar
                   </button>
                 </div>
                 <p
-                  className='flex my-1 text-sm text-center place-content-center select-none hover:cursor-pointer hover:text-[#D9BD8B]'
+                  className='flex my-1 text-sm text-center place-content-center select-none hover:cursor-pointer hover:text-birch-wood'
                   onClick={() => setAskingDeletion(true)}
                 >
                   Vaciar carrito

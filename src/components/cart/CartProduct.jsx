@@ -21,9 +21,9 @@ export const CartProduct = ({ product }) => {
 
       <div className='flex flex-col flex-4 min-w-[73px] gap-1 justify-center items-center text-center'>
         <p className=' text-xl text-white'>$ {product.price}</p>
-        <div className='flex rounded-lg bg-[#a6121f]'>
+        <div className='flex rounded-lg bg-tabasco-red'>
           <button
-            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-[#D9BD8B] text-white text-lg'
+            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-birch-wood text-white text-lg'
             onClick={() => onRemoveLlama(product)}
           >
             -
@@ -32,7 +32,7 @@ export const CartProduct = ({ product }) => {
             {product.quantity}
           </button>
           <button
-            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-[#D9BD8B] text-white text-lg'
+            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-birch-wood text-white text-lg'
             onClick={() => onAddLlama(product)}
           >
             +

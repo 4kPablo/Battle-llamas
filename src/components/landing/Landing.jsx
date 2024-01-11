@@ -16,8 +16,6 @@ import { FeaturedProducts } from './FeaturedProducts';
 
 export const Landing = () => {
   const { height, width } = useWindowDimensions();
-  const backgroundHero = '';
-  const classNames = [];
   let landingTitle = '';
 
   if (width > 685) {
@@ -34,7 +32,7 @@ export const Landing = () => {
       <HeroBackground />
       <HeroCard />
 
-      <div className='w-full bg-[#0d0d0d] px-5 2xl:px-0'>
+      <div className='w-full bg-fake-black px-5 2xl:px-0'>
         <div className='max-w-7xl my-0 mx-auto'>
           <HeroStats />
           <div className='flex flex-col justify-center items-center gap-20 mb-20'>
@@ -85,7 +83,7 @@ export const Landing = () => {
             <MdDoubleArrow />
             <CustomLink
               to='/store'
-              className='flex bg-[#a6121f] border-[#a6121f]  border-2 text-center py-2 px-7 rounded-xl text-white'
+              className='flex bg-tabasco-red border-tabasco-red  border-2 text-center py-2 px-7 rounded-xl text-white'
             >
               <p className='text-2xl'>TIENDA</p>
             </CustomLink>

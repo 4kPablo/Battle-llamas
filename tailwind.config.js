@@ -7,6 +7,12 @@ export default {
       fontFamily: {
         'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
       },
+      colors: {
+        'transparent-black': '#000c',
+        'fake-black': '#0d0d0d',
+        'tabasco-red': '#a6121f',
+        'birch-wood': '#d9bd8b',
+      },
       screens: {
         sm: '576px',
         md: '768px',

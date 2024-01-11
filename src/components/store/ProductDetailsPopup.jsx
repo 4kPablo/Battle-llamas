@@ -1,14 +1,15 @@
-import React from 'react';
+import { Context } from '../cart/CartContext.jsx';
+import { useContext } from 'react';
 
 export const ProductDetailsPopup = ({
   clickedProduct,
   visibleDetails,
   toggleDetails,
-  onAddLlama,
 }) => {
   if (visibleDetails) {
+    const { onAddLlama } = useContext(Context);
     return (
-      <div className='flex fixed bg-[#000c] sm:bg-transparent sm:backdrop-blur-sm justify-center items-center h-full w-full'>
+      <div className='flex fixed bg-transparent-black z-20 sm:bg-transparent sm:backdrop-blur-sm justify-center items-center h-full w-full'>
         <div className='flex flex-col 780:flex-row text-center items-center h-full 780:h-1/2 w-[50em] lg:text-xl gap-5 px-5 py-7 lg:p-7 mt-14 md:mt-0 rounded-lg text-white bg-black'>
           <img
             className='flex-1 h-[20em] object-cover rounded-lg'
@@ -21,7 +22,7 @@ export const ProductDetailsPopup = ({
             </div>
 
             <div className='mid_div flex flex-1 flex-col items-center text-center gap-4 '>
-              <p className='text-[#D9BD8B]'>{clickedProduct.description}</p>
+              <p className='text-birch-wood'>{clickedProduct.description}</p>
               <p className='border-2 rounded-full w-fit px-3'>
                 {clickedProduct.category}
               </p>
@@ -36,13 +37,13 @@ export const ProductDetailsPopup = ({
               <div className='flex gap-4'>
                 <button
                   onClick={() => onAddLlama(clickedProduct)}
-                  className='bg-[#a6121f] text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-[#D9BD8B] text-white text-lg'
+                  className='bg-tabasco-red text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-white text-lg'
                 >
                   Agregar al carrito
                 </button>
                 <button
                   onClick={() => toggleDetails()}
-                  className='bg-white  text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-[#D9BD8B] text-black text-lg'
+                  className='bg-white  text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-black text-lg'
                 >
                   Cerrar
                 </button>

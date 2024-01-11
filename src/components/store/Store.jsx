@@ -1,15 +1,13 @@
 import { useContext, useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
-import { UnifiedFilter } from './UnifiedFIlters.jsx';
+import { FilterBar } from './FilterBar.jsx';
 import { ProductCard } from './ProductCard';
 import { products } from '../../products.js';
-import { Context } from '../cart/CartContext.jsx';
 
 export const Store = () => {
   const [renderedProducts, setRenderedProducts] = useState(products);
   const [clickedProduct, setClickedProduct] = useState(null);
   const [visibleDetails, setVisibleDetails] = useState(false);
-  const { onAddLlama } = useContext(Context);
   const [allCategories] = useState([
     'Todo',
     'Combate',
@@ -30,22 +28,18 @@ export const Store = () => {
         clickedProduct={clickedProduct}
         visibleDetails={visibleDetails}
         toggleDetails={toggleDetails}
-        onAddLlama={onAddLlama}
       />
-      <div className='bg-[#161616] text-white p-2 pb-7 pt-12'>
-        {/* <div className='flex flex-col fixed text-center items-center -left-1 py-2 gap-1 w-full select-none bg-black text-white'> */}
-        <UnifiedFilter
-          allCategories={allCategories}
-          setRenderedProducts={setRenderedProducts}
-        />
-        {/* </div> */}
+      <FilterBar
+        allCategories={allCategories}
+        setRenderedProducts={setRenderedProducts}
+      />
+      <div className='flex relative bg-fake-black text-white z-0 p-2 pb-7'>
         <ul className='flex flex-wrap place-content-center'>
           {renderedProducts.map((product) => {
             return (
               <ProductCard
                 key={product.id}
                 product={product}
-                onAddLlama={onAddLlama}
                 toggleDetails={toggleDetails}
               />
             );

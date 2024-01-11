@@ -10,10 +10,10 @@ export const Footer = () => {
         <CustomLink to='/contact'>Contacto</CustomLink>
       </div>
       <div className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center'>
-        <CustomLink to='/404'>Privacidad</CustomLink>
+        <CustomLink to='/privacy'>Privacidad</CustomLink>
       </div>
       <div className='flex flex-1 text-xs sm:text-base text-gray-500 justify-center'>
-        <CustomLink to='/404'>Bienestar animal</CustomLink>
+        <CustomLink to='/animal_care'>Bienestar animal</CustomLink>
       </div>
     </div>
   );

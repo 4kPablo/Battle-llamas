@@ -14,13 +14,13 @@ export const HeroCard = () => {
         </p>
         <div className='flex flex-col gap-2.5'>
           <CustomLink
-            className='flex bg-[#a6121f] border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
+            className='flex bg-tabasco-red border-tabasco-red  border-2 place-content-center rounded-xl text-white p-2'
             to='/store'
           >
             <p className='text-sm xl:text-lg'>TIENDA</p>
           </CustomLink>
           <CustomLink
-            className='flex border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
+            className='flex border-tabasco-red  border-2 place-content-center rounded-xl text-white p-2'
             to='/login'
           >
             <p className='text-sm xl:text-lg'>LOGIN</p>
@@ -38,13 +38,13 @@ export const HeroCard = () => {
         </p>
         <div className='flex flex-col gap-2.5 w-1/2 sm:w-3/12'>
           <CustomLink
-            className='flex bg-[#a6121f] border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
+            className='flex bg-tabasco-red border-tabasco-red  border-2 place-content-center rounded-xl text-white p-2'
             to='/store'
           >
             <p className='text-sm xl:text-lg'>TIENDA</p>
           </CustomLink>
           <CustomLink
-            className='flex border-[#a6121f]  border-2 place-content-center rounded-xl text-white p-2'
+            className='flex border-tabasco-red  border-2 place-content-center rounded-xl text-white p-2'
             to='/login'
           >
             <p className='text-sm xl:text-lg'>LOGIN</p>

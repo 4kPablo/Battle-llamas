@@ -1,8 +1,11 @@
 import useWindowDimensions from '../../windowDimensions';
+import { Context } from '../cart/CartContext.jsx';
+import { useContext } from 'react';
 import { TbShoppingCartPlus as AddToCartIcon } from 'react-icons/tb';
 
-export const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
+export const ProductCard = ({ product, toggleDetails }) => {
   const { height, width } = useWindowDimensions();
+  const { onAddLlama } = useContext(Context);
 
   if (width > 600) {
     return (
@@ -18,7 +21,7 @@ export const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
           <h2 className='text-lg hidden lg:inline text-white'>
             {product.subtitle}
           </h2>
-          <p className='text-sm text-[#D9BD8B] hover:text-white'>
+          <p className='text-sm text-birch-wood hover:text-white'>
             ⓘ Click para ver más
           </p>
         </div>
@@ -27,7 +30,7 @@ export const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
           <p className='lg:text-xl text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='flex bg-[#a6121f] text-center font-bold py-1 px-3 rounded-xl border-1 hover:text-[#D9BD8B] text-white lg:text-lg'
+            className='flex bg-tabasco-red text-center font-bold py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-white lg:text-lg'
           >
             Agregar al carrito
           </button>
@@ -48,14 +51,14 @@ export const ProductCard = ({ product, onAddLlama, toggleDetails }) => {
           onClick={() => toggleDetails(product)}
         >
           <h2 className=' text-base font-bold text-white'>{product.title}</h2>
-          <p className=' text-base text-[#D9BD8B]'>ⓘ Toca para ver más</p>
+          <p className=' text-base text-birch-wood'>ⓘ Toca para ver más</p>
         </div>
 
         <div className='flex flex-col flex-4 min-w-[80px] gap-1 justify-center items-center text-center'>
           <p className=' text-base text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl bg-[#a6121f] active:bg-[#a6121ea1] text-white text-lg xl:text-lg'
+            className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl bg-tabasco-red active:bg-[#a6121ea1] text-white text-lg xl:text-lg'
           >
             <AddToCartIcon className='text-center' />
           </button>

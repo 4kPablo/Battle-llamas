@@ -33,7 +33,7 @@ export const LandingHorizontalCard = ({
             <h2 className=' text-left text-2xl lg:text-4xl font-bold text-white mb-3'>
               {title}
             </h2>
-            <p className=' text-left text-lg lg:text-2xl text-[#D9BD8B]'>
+            <p className=' text-left text-lg lg:text-2xl text-birch-wood'>
               {description}
             </p>
           </div>
@@ -49,7 +49,7 @@ export const LandingHorizontalCard = ({
           src={img}
         />
         <h2 className=' text-2xl font-bold text-white my-3'>{title}</h2>
-        <p className=' text-lg text-[#D9BD8B]'>{description}</p>
+        <p className=' text-lg text-birch-wood'>{description}</p>
       </div>
     );
   }

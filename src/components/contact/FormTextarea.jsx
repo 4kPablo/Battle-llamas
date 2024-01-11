@@ -30,5 +30,5 @@ const InputComponent = ({ field, form, ...props }) => {
 };
 
 const ErrorComponent = ({ children }) => {
-  return <span className='flex text-sm text-red-700'>{children}</span>;
+  return <span className='flex text-sm text-tabasco-red'>{children}</span>;
 };

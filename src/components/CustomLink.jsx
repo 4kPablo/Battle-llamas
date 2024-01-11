@@ -9,7 +9,7 @@ export const CustomLink = ({ to, children, ...props }) => {
   };
 
   return (
-    <div onClick={scrollToTop} className={isActive ? 'text-slate-500' : ''}>
+    <div onClick={scrollToTop} className={isActive ? 'text-gray-500' : ''}>
       <Link to={to} {...props}>
         {children}
       </Link>

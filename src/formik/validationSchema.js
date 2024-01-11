@@ -11,6 +11,10 @@ export const validationSchema = Yup.object({
     .matches(/^[a-zA-Z ]*$/, 'Apellido inválido')
     .required('Campo requerido'),
   companyName: Yup.string().trim().max(20, 'Máximo 20 caracteres'),
+  subject: Yup.string()
+    .trim()
+    .max(20, 'Máximo 20 caracteres')
+    .required('Campo requerido'),
   email: Yup.string().email('Email inválido').required('Campo requerido'),
   message: Yup.string().trim().required('Campo requerido'),
 });

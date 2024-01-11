@@ -11,7 +11,7 @@ export const LandingVerticalCard = ({ img, title, description }) => {
           <h2 className=' text-2xl lg:text-3xl font-bold text-white mb-3'>
             {title}
           </h2>
-          <p className='text-lg lg:text-xl text-[#D9BD8B]'>{description}</p>
+          <p className='text-lg lg:text-xl text-birch-wood'>{description}</p>
         </div>
       </div>
     );
@@ -23,7 +23,7 @@ export const LandingVerticalCard = ({ img, title, description }) => {
           src={img}
         />
         <h2 className='text-2xl font-bold text-white my-3'>{title}</h2>
-        <p className='text-lg text-[#D9BD8B]'>{description}</p>
+        <p className='text-lg text-birch-wood'>{description}</p>
       </div>
     );
   }

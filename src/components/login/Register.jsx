@@ -8,7 +8,7 @@ export const Register = () => {
     }
   };
   return (
-    <div className='flex justify-center bg-[#0d0d0d] h-full p-7'>
+    <div className='flex justify-center bg-fake-black h-full p-7'>
       <div className='flex justify-center rounded-xl p-10 bg-black mt-12 w-full sm:w-[22em]'>
         <form
           className='flex flex-col items-center text-white'
@@ -17,34 +17,34 @@ export const Register = () => {
         >
           <div className='flex w-64'>
             <input
-              className='rounded-tl-lg outline-none bg-[#0d0d0d] placeholder:px-1 w-full p-2 sm:p-1'
+              className='rounded-tl-lg outline-none bg-fake-black placeholder:px-1 w-full p-2 sm:p-1'
               type='text'
               placeholder='Nombre'
             />
             <input
-              className='rounded-tr-lg outline-none bg-[#0d0d0d] placeholder:px-1 w-full p-2 sm:p-1'
+              className='rounded-tr-lg outline-none bg-fake-black placeholder:px-1 w-full p-2 sm:p-1'
               type='text'
               placeholder='Apellido'
             />
           </div>
           <input
-            className='outline-none bg-[#0d0d0d] placeholder:px-1 w-full p-2 sm:p-1'
+            className='outline-none bg-fake-black placeholder:px-1 w-full p-2 sm:p-1'
             type='email'
             placeholder='Email'
             name='email'
           />
           <input
-            className='outline-none bg-[#0d0d0d] placeholder:px-1 w-full p-2 sm:p-1'
+            className='outline-none bg-fake-black placeholder:px-1 w-full p-2 sm:p-1'
             type='password'
             placeholder='Contraseña'
           />
           <input
-            className='rounded-b-lg outline-none bg-[#0d0d0d] placeholder:px-1 w-full p-2 sm:p-1'
+            className='rounded-b-lg outline-none bg-fake-black placeholder:px-1 w-full p-2 sm:p-1'
             type='password'
             placeholder='Confirmar contraseña'
           />
           <button
-            className='border-none  border-2 text-center w-full mt-5 py-2 sm:py-1 rounded-xl bg-[#a6121f] text-white'
+            className='border-none  border-2 text-center w-full mt-5 py-2 sm:py-1 rounded-xl bg-tabasco-red text-white'
             type='submit'
             onClick={notificarRegistro}
           >
@@ -52,7 +52,7 @@ export const Register = () => {
           </button>
           <div className='flex text-gray-500 mt-4' href='#'>
             ¿Ya tenés cuenta?
-            <span className='text-[#D9BD8B] hover:underline'>
+            <span className='text-birch-wood hover:underline'>
               <CustomLink className='ml-1' to='/login'>
                 Logueate
               </CustomLink>
