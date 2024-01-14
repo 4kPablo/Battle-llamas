@@ -41,7 +41,7 @@ export const About = () => {
           </h2>
           <div className='md:flex md:gap-5'>
             <p className='text-left text-xl lg:text-2xl text-birch-wood mb-3'>
-              Impulsar la innovación en el campo de batalla proporcionando
+              Impulsamos la innovación en el campo de batalla proporcionando
               compañeros de guerra inusuales pero altamente eficientes: las
               alpacas. Nos esforzamos por ofrecer soluciones únicas que desafíen
               las convenciones y brinden una ventaja estratégica.

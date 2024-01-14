@@ -32,7 +32,7 @@ export const Landing = () => {
       <HeroBackground />
       <HeroCard />
 
-      <div className='w-full bg-fake-black px-5 2xl:px-0'>
+      <section className='flex flex-col w-full bg-fake-black px-5 2xl:px-0'>
         <div className='max-w-7xl my-0 mx-auto'>
           <HeroStats />
           <div className='flex flex-col justify-center items-center gap-20 mb-20'>
@@ -67,9 +67,9 @@ export const Landing = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className='bg-black flex flex-col justify-center items-center py-20 gap-20'>
+      <section className='bg-black flex flex-col justify-center items-center py-20 gap-20'>
         <h1 className='font-space-grotesk w-full px-5 outlined-text text-6xl sm:text-7xl min-[865px]:text-8xl text-center'>
           HAZ QUE TU ENEMIGO TIEMBLE
         </h1>
@@ -82,15 +82,32 @@ export const Landing = () => {
           >
             <MdDoubleArrow />
             <CustomLink
-              to='/store'
               className='flex bg-tabasco-red border-tabasco-red  border-2 text-center py-2 px-7 rounded-xl text-white'
+              to='/store'
             >
-              <p className='text-2xl'>TIENDA</p>
+              <p className='text-2xl'>CATÁLOGO COMPLETO</p>
             </CustomLink>
             <MdDoubleArrow />
           </IconContext.Provider>
         </div>
-      </div>
+      </section>
+
+      <section className='flex justify-between border-2 border-gray-500 mb-20 p-7 min-h-20 gap-6 rounded-md'>
+        <div className='flex flex-col justify-between gap-3'>
+          <h2 className=' text-left text-2xl lg:text-4xl font-bold text-white'>
+            Animal warfare S.A.
+          </h2>
+          <p className=' text-left text-lg lg:text-2xl text-gray-500'>
+            Innovación militar para países en desarrollo
+          </p>
+        </div>
+        <CustomLink
+          className='flex h-full w-32 items-center text-center text-lg py-2 px-7 bg-fake-black hover:text-white rounded-full  text-gray-500'
+          to='/about'
+        >
+          ¿Quiénes somos?
+        </CustomLink>
+      </section>
     </div>
   );
 };

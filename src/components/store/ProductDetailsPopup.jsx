@@ -9,7 +9,7 @@ export const ProductDetailsPopup = ({
   if (visibleDetails) {
     const { onAddLlama } = useContext(Context);
     return (
-      <div className='flex fixed bg-transparent-black z-20 sm:bg-transparent sm:backdrop-blur-sm justify-center items-center h-full w-full'>
+      <div className='flex fixed bg-transparent-black z-20 top-0 sm:bg-transparent sm:backdrop-blur-sm justify-center items-center h-full w-full'>
         <div className='flex flex-col 780:flex-row text-center items-center h-full 780:h-1/2 w-[50em] lg:text-xl gap-5 px-5 py-7 lg:p-7 mt-14 md:mt-0 rounded-lg text-white bg-black'>
           <img
             className='flex-1 h-[20em] object-cover rounded-lg'

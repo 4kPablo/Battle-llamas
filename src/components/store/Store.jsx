@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { ProductDetailsPopup } from './ProductDetailsPopup.jsx';
 import { FilterBar } from './FilterBar.jsx';
 import { ProductCard } from './ProductCard';

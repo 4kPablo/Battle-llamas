@@ -1,7 +1,7 @@
 import useWindowDimensions from '../../windowDimensions';
-import { Context } from '../cart/CartContext.jsx';
-import { useContext } from 'react';
 import { TbShoppingCartPlus as AddToCartIcon } from 'react-icons/tb';
+import { React, useContext } from 'react';
+import { Context } from '../cart/CartContext.jsx';
 
 export const ProductCard = ({ product, toggleDetails }) => {
   const { height, width } = useWindowDimensions();
