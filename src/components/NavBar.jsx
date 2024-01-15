@@ -27,7 +27,7 @@ export const NavBar = () => {
           {/* Links (💻) */}
           <div className='hidden min-[620px]:flex items-center text-white text-xl gap-5'>
             <CustomLink to='/store'>TIENDA</CustomLink>
-            <CustomLink to='/about'>NOSOTROS</CustomLink>
+            <CustomLink to='/contact'>CONTACTO</CustomLink>
             <CustomLink to='/login'>ACCEDER</CustomLink>
 
             {/* <IconContext.Provider value={{className: "bg-red-300" }}> */}

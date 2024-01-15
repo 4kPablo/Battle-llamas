@@ -80,19 +80,19 @@ export const Landing = () => {
           <IconContext.Provider
             value={{ color: '#D9BD8B', size: '76px', className: 'IconContext' }}
           >
-            <MdDoubleArrow />
+            <MdDoubleArrow className='hidden sm:block' />
             <CustomLink
               className='flex bg-tabasco-red border-tabasco-red  border-2 text-center py-2 px-7 rounded-xl text-white'
               to='/store'
             >
               <p className='text-2xl'>CATÁLOGO COMPLETO</p>
             </CustomLink>
-            <MdDoubleArrow />
+            <MdDoubleArrow className='hidden sm:block rotate-180' />
           </IconContext.Provider>
         </div>
       </section>
 
-      <section className='flex justify-between border-2 border-gray-500 mb-20 p-7 min-h-20 gap-6 rounded-md'>
+      {/* <section className='flex justify-between border-2 border-gray-500 mb-20 p-7 min-h-20 gap-6 rounded-md'>
         <div className='flex flex-col justify-between gap-3'>
           <h2 className=' text-left text-2xl lg:text-4xl font-bold text-white'>
             Animal warfare S.A.
@@ -107,7 +107,7 @@ export const Landing = () => {
         >
           ¿Quiénes somos?
         </CustomLink>
-      </section>
+      </section> */}
     </div>
   );
 };

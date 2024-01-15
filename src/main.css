@@ -22,10 +22,6 @@
     -1px 1px #fff;
 }
 
-.IconContext:nth-child(3) {
-  rotate: 180deg;
-}
-
 .no-scrollbar {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
