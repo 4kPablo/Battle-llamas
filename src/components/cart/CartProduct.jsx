@@ -19,9 +19,11 @@ export const CartProduct = ({ product }) => {
         <p className=' text-base font-bold text-white '>{product.title}</p>
       </div>
 
-      <div className='flex flex-col flex-4 min-w-[73px] gap-1 justify-center items-center text-center'>
-        <p className=' text-xl text-white'>$ {product.price}</p>
-        <div className='flex rounded-lg bg-tabasco-red'>
+      <div className='flex flex-col flex-4 gap-1 justify-center items-end text-center'>
+        <p className=' text-xl text-white whitespace-nowrap'>
+          $ {product.price}
+        </p>
+        <div className='flex w-fit rounded-lg bg-tabasco-red'>
           <button
             className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-birch-wood text-white text-lg'
             onClick={() => onRemoveLlama(product)}
