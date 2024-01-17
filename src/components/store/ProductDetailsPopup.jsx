@@ -37,13 +37,13 @@ export const ProductDetailsPopup = ({
               <div className='flex gap-4'>
                 <button
                   onClick={() => onAddLlama(clickedProduct)}
-                  className='bg-tabasco-red text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-white text-lg'
+                  className='bg-tabasco-red hover:bg-tabasco-red-dark active:bg-tabasco-red-light text-white text-center font-bold h-10 py-1 px-3 rounded-xl border-1 text-lg'
                 >
                   Agregar al carrito
                 </button>
                 <button
                   onClick={() => toggleDetails()}
-                  className='bg-white  text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-black text-lg'
+                  className='bg-white hover:bg-tabasco-red-dark active:bg-tabasco-red-light text-center font-bold h-10 py-1 px-3 rounded-xl border-1 hover:text-white text-black text-lg'
                 >
                   Cerrar
                 </button>

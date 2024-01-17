@@ -26,9 +26,15 @@ export const NavBar = () => {
 
           {/* Links (💻) */}
           <div className='hidden min-[620px]:flex items-center text-white text-xl gap-5'>
-            <CustomLink to='/store'>TIENDA</CustomLink>
-            <CustomLink to='/contact'>CONTACTO</CustomLink>
-            <CustomLink to='/login'>ACCEDER</CustomLink>
+            <CustomLink className='hover:text-gray-500' to='/store'>
+              TIENDA
+            </CustomLink>
+            <CustomLink className='hover:text-gray-500' to='/contact'>
+              CONTACTO
+            </CustomLink>
+            <CustomLink className='hover:text-gray-500' to='/login'>
+              ACCEDER
+            </CustomLink>
 
             {/* <IconContext.Provider value={{className: "bg-red-300" }}> */}
             <div className='flex items-center justify-center place-content-center text-center'>
@@ -96,20 +102,21 @@ export const NavBar = () => {
               </CustomLink>
               <CustomLink
                 onClick={() => setIsNavActive(!isNavActive)}
-                to='/login'
+                to='/contact'
               >
-                LOGIN
+                CONTACTO
               </CustomLink>
               <CustomLink
                 onClick={() => setIsNavActive(!isNavActive)}
-                to='/about'
+                to='/login'
               >
-                ABOUT US
+                LOGIN
               </CustomLink>
             </div>
           </nav>
         </div>
       </nav>
+
       <Cart />
     </>
   );

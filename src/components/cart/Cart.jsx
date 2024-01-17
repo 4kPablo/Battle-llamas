@@ -108,13 +108,13 @@ export const Cart = () => {
                       setAskingBuy(true);
                       console.log(askingBuy);
                     }}
-                    className=' text-center py-2 w-full rounded-lg bg-white hover:bg-tabasco-red text-black hover:text-white'
+                    className='text-center py-2 w-full rounded-lg text-black hover:text-white bg-white border-2 border-white hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black'
                   >
                     Comprar
                   </button>
                 </div>
                 <p
-                  className='flex my-1 text-sm text-center place-content-center select-none hover:cursor-pointer hover:text-birch-wood'
+                  className='flex my-1 text-sm text-center place-content-center select-none hover:cursor-pointer text-birch-wood hover:text-white'
                   onClick={() => setAskingDeletion(true)}
                 >
                   Vaciar carrito

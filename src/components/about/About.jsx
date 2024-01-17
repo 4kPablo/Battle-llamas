@@ -196,7 +196,7 @@ export const About = () => {
             Gracias por visitar BATTLE LLAMAS. Si tienes alguna pregunta o
             inquietud, no dudes en ponerte en contacto con nosotros.
           </p>
-          <button className='text-center font-bold text-black hover:text-white bg-white hover:bg-tabasco-red active:bg-tabasco-red active:text-white rounded-lg border-1 text-lg w-full sm:w-40 py-0.5 px-2.5'>
+          <button className='text-center font-bold text-black hover:text-white bg-white border-2 border-white hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black rounded-lg border-1 text-lg w-full sm:w-40 py-0.5 px-2.5'>
             <CustomLink to='/contact'>Contacto</CustomLink>
           </button>
         </section>

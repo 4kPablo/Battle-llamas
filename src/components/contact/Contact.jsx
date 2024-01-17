@@ -74,7 +74,7 @@ export const Contact = () => {
               placeholder='Mensaje'
             />
             <button
-              className='border-none border-2 text-center w-full py-2 sm:py-1 rounded-xl bg-tabasco-red text-white'
+              className='text-center w-full py-2 sm:py-1 rounded-xl border-2 border-tabasco-red bg-tabasco-red hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black text-white'
               type='submit'
             >
               {messageSent ? 'Mensaje enviado!' : 'Enviar'}

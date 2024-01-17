@@ -9,9 +9,8 @@ import { LandingVerticalCard } from './LandingVerticalCard';
 import { HeroBackground } from './HeroBackground';
 import { HeroCard } from './HeroCard';
 import { HeroStats } from './HeroStats';
-import { MdDoubleArrow } from 'react-icons/md';
-import { IconContext } from 'react-icons';
 import { CustomLink } from '../CustomLink';
+import { MdDoubleArrow } from 'react-icons/md';
 import { FeaturedProducts } from './FeaturedProducts';
 
 export const Landing = () => {
@@ -70,44 +69,23 @@ export const Landing = () => {
       </section>
 
       <section className='bg-black flex flex-col justify-center items-center py-20 gap-20'>
-        <h1 className='font-space-grotesk w-full px-5 outlined-text text-6xl sm:text-7xl min-[865px]:text-8xl text-center'>
+        <h1 className='font-space-grotesk w-full px-5 outlined-text text-5xl sm:text-7xl min-[865px]:text-8xl text-center'>
           HAZ QUE TU ENEMIGO TIEMBLE
         </h1>
 
         <FeaturedProducts />
 
-        <div className='flex items-center justify-center gap-5'>
-          <IconContext.Provider
-            value={{ color: '#D9BD8B', size: '76px', className: 'IconContext' }}
+        <div className='flex items-center justify-center gap-3 sm:gap-5'>
+          <MdDoubleArrow className='text-4xl sm:text-6xl text-birch-wood sm:block' />
+          <CustomLink
+            className='flex border-2 border-tabasco-red bg-tabasco-red hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black text-white text-center py-2 px-7 rounded-xl'
+            to='/store'
           >
-            <MdDoubleArrow className='hidden sm:block' />
-            <CustomLink
-              className='flex bg-tabasco-red border-tabasco-red  border-2 text-center py-2 px-7 rounded-xl text-white'
-              to='/store'
-            >
-              <p className='text-2xl'>CATÁLOGO COMPLETO</p>
-            </CustomLink>
-            <MdDoubleArrow className='hidden sm:block rotate-180' />
-          </IconContext.Provider>
+            <p className='text-2xl'>CATÁLOGO COMPLETO</p>
+          </CustomLink>
+          <MdDoubleArrow className='text-4xl sm:text-6xl text-birch-wood sm:block rotate-180' />
         </div>
       </section>
-
-      {/* <section className='flex justify-between border-2 border-gray-500 mb-20 p-7 min-h-20 gap-6 rounded-md'>
-        <div className='flex flex-col justify-between gap-3'>
-          <h2 className=' text-left text-2xl lg:text-4xl font-bold text-white'>
-            Animal warfare S.A.
-          </h2>
-          <p className=' text-left text-lg lg:text-2xl text-gray-500'>
-            Innovación militar para países en desarrollo
-          </p>
-        </div>
-        <CustomLink
-          className='flex h-full w-32 items-center text-center text-lg py-2 px-7 bg-fake-black hover:text-white rounded-full  text-gray-500'
-          to='/about'
-        >
-          ¿Quiénes somos?
-        </CustomLink>
-      </section> */}
     </div>
   );
 };

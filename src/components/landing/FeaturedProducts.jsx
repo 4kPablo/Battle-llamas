@@ -30,7 +30,7 @@ export const FeaturedProducts = () => {
         visibleDetails={visibleDetails}
         toggleDetails={toggleDetails}
       />
-      <ul className='flex text-white text-lg'>
+      <ul className='flex justify-center flex-wrap flex-col md:flex-row text-white text-lg'>
         {randomProducts.map((product) => (
           <ProductMiniCard
             key={product.id}

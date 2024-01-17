@@ -15,7 +15,7 @@ export const CartProduct = ({ product }) => {
         src={product.img}
       />
 
-      <div className='flex flex-4 flex-col justify-center w-full p-1 hover:cursor-pointer'>
+      <div className='flex flex-4 flex-col justify-center w-full p-1'>
         <p className=' text-base font-bold text-white '>{product.title}</p>
       </div>
 
@@ -25,7 +25,7 @@ export const CartProduct = ({ product }) => {
         </p>
         <div className='flex w-fit rounded-lg bg-tabasco-red'>
           <button
-            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-birch-wood text-white text-lg'
+            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-gray-400 text-white text-lg'
             onClick={() => onRemoveLlama(product)}
           >
             -
@@ -34,7 +34,7 @@ export const CartProduct = ({ product }) => {
             {product.quantity}
           </button>
           <button
-            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-birch-wood text-white text-lg'
+            className='text-center font-bold py-0.5 px-2.5 rounded-lg border-1 hover:text-gray-400 text-white text-lg'
             onClick={() => onAddLlama(product)}
           >
             +

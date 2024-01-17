@@ -11,6 +11,8 @@ export default {
         'transparent-black': '#000c',
         'fake-black': '#0d0d0d',
         'tabasco-red': '#a6121f',
+        'tabasco-red-dark': '#a6121ea1',
+        'tabasco-red-light': '#a14d54',
         'birch-wood': '#d9bd8b',
       },
       screens: {

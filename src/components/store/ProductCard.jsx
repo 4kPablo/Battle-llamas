@@ -30,7 +30,7 @@ export const ProductCard = ({ product, toggleDetails }) => {
           <p className='lg:text-xl text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='flex bg-tabasco-red text-center font-bold py-1 px-3 rounded-xl border-1 hover:text-birch-wood text-white lg:text-lg'
+            className='flex border-2 border-tabasco-red bg-tabasco-red hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black text-white text-center font-bold py-1 px-2 rounded-xl border-1 lg:text-lg'
           >
             Agregar al carrito
           </button>
@@ -58,7 +58,7 @@ export const ProductCard = ({ product, toggleDetails }) => {
           <p className=' text-base text-white'>$ {product.price}</p>
           <button
             onClick={() => onAddLlama(product)}
-            className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl bg-tabasco-red active:bg-[#a6121ea1] text-white text-lg xl:text-lg'
+            className='flex text-center justify-center items-center w-full h-8 p-1 rounded-xl border-2 border-tabasco-red bg-tabasco-red hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black text-white text-lg xl:text-lg'
           >
             <AddToCartIcon className='text-center' />
           </button>
