@@ -21,6 +21,7 @@ export const FeaturedProducts = () => {
   };
 
   // Se usa useMemo para no re-renderizar los 5 productos constantemente
+  // Y se usa el Array.from para convertir el set en un array
   const randomProducts = useMemo(() => Array.from(randomLlamaGenerator()), []);
 
   return (

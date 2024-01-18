@@ -2,7 +2,7 @@ import { CustomLink } from '../CustomLink';
 
 export const Login = () => {
   return (
-    <div className='flex justify-center bg-fake-black h-full p-7'>
+    <div className='flex justify-center bg-fake-black h-full p-12'>
       <div className='flex justify-center rounded-xl p-10 bg-black mt-12 w-full sm:w-[22em]'>
         <form className='flex flex-col items-center text-white' action='#'>
           <input

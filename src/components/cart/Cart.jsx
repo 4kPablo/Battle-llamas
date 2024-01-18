@@ -106,7 +106,6 @@ export const Cart = () => {
                   <button
                     onClick={() => {
                       setAskingBuy(true);
-                      console.log(askingBuy);
                     }}
                     className='text-center py-2 w-full rounded-lg text-black hover:text-white bg-white border-2 border-white hover:bg-tabasco-red-dark hover:border-black active:bg-tabasco-red-light active:border-black'
                   >
