@@ -33,19 +33,19 @@ export const Store = () => {
         allCategories={allCategories}
         setRenderedProducts={setRenderedProducts}
       />
-      <div className='flex relative bg-fake-black text-white z-0 p-2 pb-7'>
-        <ul className='flex flex-wrap place-content-center'>
-          {renderedProducts.map((product) => {
-            return (
-              <ProductCard
-                key={product.id}
-                product={product}
-                toggleDetails={toggleDetails}
-              />
-            );
-          })}
-        </ul>
-      </div>
+      {/* <div className='flex relative bg-pink-800 text-white z-0 p-2 pb-7'> */}
+      <ul className='flex-wrap flex relative bg-fake-black text-white z-0 p-2 pb-7 place-content-center'>
+        {renderedProducts.map((product) => {
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              toggleDetails={toggleDetails}
+            />
+          );
+        })}
+      </ul>
+      {/* </div> */}
     </>
   );
 };
